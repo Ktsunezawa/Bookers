@@ -36,3 +36,9 @@ a:visited{
 .title,.body,.update,.create{
     margin-bottom: 10px;
 }
+
+td{
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
