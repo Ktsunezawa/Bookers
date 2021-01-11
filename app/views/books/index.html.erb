@@ -1,3 +1,5 @@
+<P class="success"><%= flash[:notice] %></P>
+
 <h1>Books</h1>
 <table>
     <thead>
@@ -14,19 +16,24 @@
             <td><%= book.body %></td>
             <td><%= link_to "Show",  book_path(book) %></td>
             <td><%= link_to "Edit", edit_book_path(book) %></td>
-            <td><%= link_to "Destroy", book_path(book.id), method: :delete, "date-confirm" => "Are you sure?" %></td>
+            <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
         </tr>
     </tbody>
     <% end %>
 </table>
 
 <h2>New book</h2>
+
 <% if @book.errors.any? %>
- <%= @book.errors.count %>errors prohibited this book from being saved:
- <%= @book.errors.full_messages.each do |message| %>
-   <%= message %>
+<div class="error">
+ <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+<ul> <% @book.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
  <% end %>
+</ul>
 <% end %>
+</div>
+
 <%= form_with model:@book, local:true do |f| %> 
 <div class="title">
 <div class="title-name">Title</div>
