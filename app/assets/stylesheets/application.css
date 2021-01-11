@@ -36,6 +36,10 @@ p,ul,ol,td{
     margin: 33px;
 }
 
+a{
+    color: #000;
+}
+
 a:visited{
     color:#666;
 }
